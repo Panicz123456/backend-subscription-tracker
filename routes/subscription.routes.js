@@ -27,6 +27,7 @@ subscriptionRouter.get("/user/:id", authorize, getUserSubscriptions)
 
 subscriptionRouter.put("/:id/cancel", authorize, cancelSubscription)
 
+// TODO: Add a route to get all subscriptions that are about to renew in the next 30 days
 subscriptionRouter.get("/upcoming-renewals", (req, res) => {
   res.send({title: "GET upcoming renewals"});
 })
