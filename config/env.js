@@ -8,4 +8,6 @@ export const {
   MONGO_DB,
   JWT_SECRET,
   JWT_EXPIRES_IN,
+  ARCJET_KEY,
+  ARCJET_ENV
 } = process.env;
