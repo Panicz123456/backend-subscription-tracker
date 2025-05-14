@@ -109,21 +109,21 @@ export const signIn = async (req, res, next) => {
 };
 
 export const signOut = async (req, res, next) => {
-  // try {
-  //   const authHeader = req.headers["authorization"];
-  //   const token = authHeader && authHeader.split(" ")[1]; // Bearer TOKEN
-  //
-  //   if (token) {
-  //     tokenDenylist.add(token);
-  //   }
-  //
-  //   res.clearCookie("jwt");
-  //
-  //   res.status(200).json({
-  //     success: true,
-  //     message: "User signed out successfully.",
-  //   });
-  // } catch (error) {
-  //   next(error);
-  // }
+  try {
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1]; // Bearer TOKEN
+
+    if (token) {
+      tokenDenylist.add(token);
+    }
+
+    res.clearCookie("jwt");
+
+    res.status(200).json({
+      success: true,
+      message: "User signed out successfully.",
+    });
+  } catch (error) {
+    next(error);
+  }
 };
